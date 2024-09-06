@@ -1,0 +1,86 @@
+{#
+ # Page: About Page
+ #
+ # @package WordPress
+ # @subpackage MONO
+ #}
+
+{% extends 'index.html.twig' %}
+
+{%- block content -%}
+
+	<div class="fixed inset-0 z-10 flex items-center justify-center size-full bg-brand-vert transition-opacity duration-700 ease-in-out [.is-ready_&]:opacity-0 pointer-events-none">
+		<img class="block prototype:w-[8.75rem]" src="{{ asset( 'src/img/svg/logo.svg' ) }}" alt="{{ site.title }}" width="140" height="43">
+	</div>
+
+	<main>
+		<div class="container overflow-hidden grid grid-cols-12 divide-y-[0.125rem] prototype:divide-y-0 prototype:divide-x-[0.125rem] divide-brand-noir">
+			<div class="col-span-12 prototype:col-span-6">
+				<h1 class="titre">
+					Agence d’architecture
+					<hr class="border-none bg-brand-noir h-0.5">
+					intérieure et commerciale
+				</h1>
+				<div class="border-y-[0.125rem] border-y-brand-noir pt-7 pb-16 prototype:pr-10">
+					<p>
+						{{- author.description | nl2br -}}
+					</p>
+				</div>
+				<div class="pt-7 pb-16 prototype:pr-10">
+					<h2 class="title-3">{{- __( 'Career', 'mono' ) -}}</h2>
+					<p>
+						{{- author.career | nl2br -}}
+					</p>
+				</div>
+			</div>
+			<div class="col-span-12 prototype:col-span-4">
+				{%- if author.image -%}
+					<div class="my-7 prototype:mx-7">
+						{{- include( 'components/image.html.twig', { image: author.image, classes: [ 'aspect-[388/501.59] object-cover' ] } ) -}}
+					</div>
+				{%- else -%}
+					<div class="aspect-[388/501.59] bg-brand-noir my-7 prototype:mx-7"></div>
+				{%- endif -%}
+				<hr class="border-none bg-brand-noir w-full h-0.5">
+				<div class="nom border-b-brand-noir border-b-[0.125rem] flex items-center justify-center h-[4.125rem]">
+					<p class="text-center whitespace-nowrap">Gwenhael AOUSTIN</p>
+				</div>
+				<div class="border-b-brand-noir border-b-[0.125rem] prototype:px-7 py-4">
+					<p class="telephone">{{- __( 'Phone', 'mono' ) -}}</p>
+					<a href="tel:{{ phone_number | replace( { ' ' : '' } ) | trim }}" class="block Desk/CTA_telephone mt-5 mb-4 text-nowrap">
+						{{- phone_number -}}
+					</a>
+				</div>
+				<div class="border-b-brand-noir border-b-[0.125rem] prototype:px-7 py-4">
+					<p class="email">{{- __( 'Email address', 'mono' ) -}}</p>
+					<a href="mailto:{{ public_email }}" class="block Desk/CTA_email hover:underline underline-offset-[calc(4em/14)] decoration-[0.125rem]">
+						{{- public_email -}}
+					</a>
+				</div>
+				<div class="flex">
+					{%- for social in socials -%}
+						<a href="{{ social.link }}" class="Desk/CTA_social py-6 lg:py-[1.1875rem] grow text-center hover:underline underline-offset-[calc(4em/14)] decoration-[0.125rem]" rel="noopener noreferer" target="_blank">{{- social.title -}}</a>
+						{{- loop.last ? '' : '<hr class="w-0.5 bg-brand-noir border-none h-[3.75rem]">' -}}
+					{%- endfor -%}
+				</div>
+			</div>
+			<div class="col-span-2 py-7 pl-7 hidden prototype:block">
+				<a href="{{ site.link }}" aria-label="{{ site.title }}" class="block">
+					<svg viewBox="0 0 191 703" class="w-full h-auto block">
+						<g clip-path="url(#clip0_190_689)">
+							<path d="M191 299.42C191 261.251 160.147 230.306 122.091 230.306L68.9016 230.306C30.8455 230.306 -0.00740187 261.251 -0.00740353 299.42C-0.0074052 337.59 30.8455 368.535 68.9016 368.535L122.091 368.535C160.147 368.535 191 337.59 191 299.42ZM38.9685 299.42C38.9685 283.155 52.1138 269.971 68.3303 269.971L122.662 269.971C138.879 269.971 152.024 283.155 152.024 299.42C152.024 315.685 138.879 328.87 122.662 328.87L68.3303 328.87C52.1138 328.87 38.9685 315.685 38.9685 299.42Z" fill="#181819"/>
+							<path d="M186.237 496.846L107.633 496.846C103.716 496.846 100.229 493.967 99.8732 490.061C99.569 486.705 101.49 483.758 104.317 482.516L104.317 482.508L104.391 482.479C104.391 482.479 104.391 482.479 104.398 482.479L187.246 447.226C188.211 446.816 188.834 445.871 188.834 444.822L188.834 400.135C188.834 398.691 187.669 397.523 186.23 397.523L4.7775 397.523C3.33833 397.523 2.17366 398.691 2.17366 400.135L2.17366 433.803C2.17366 435.246 3.33833 436.415 4.77749 436.415L83.3822 436.415C87.2991 436.415 90.7857 439.294 91.1418 443.2C91.4459 446.556 89.5246 449.502 86.6982 450.745L86.6982 450.752L86.624 450.782C86.624 450.782 86.624 450.782 86.6166 450.782L3.7686 486.035C2.80421 486.444 2.18107 487.389 2.18107 488.439L2.18107 533.126C2.18107 534.57 3.34574 535.738 4.78491 535.738L186.237 535.738C187.677 535.738 188.841 534.57 188.841 533.126L188.841 499.45C188.841 498.007 187.677 496.839 186.237 496.839L186.237 496.846Z" fill="#181819"/>
+							<path d="M188.841 154.033C188.841 152.984 188.218 152.039 187.254 151.63L83.5751 107.53L83.5751 107.515C80.949 106.354 79.1092 103.735 79.1092 100.67C79.1092 97.6044 81.0306 94.8588 83.7531 93.7502L83.7531 93.7353L187.254 49.695C188.218 49.2858 188.841 48.3409 188.841 47.2918L188.841 2.61161C188.841 1.16816 187.677 -5.09097e-08 186.237 -1.13817e-07L4.78491 -8.04536e-06C3.34575 -8.10827e-06 2.18108 1.16815 2.18108 2.6116L2.18107 36.2873C2.18107 37.7307 3.34575 38.8989 4.78491 38.8989L83.3896 38.8989C87.3065 38.8989 90.7931 41.7784 91.1492 45.6846C91.4534 49.0403 89.532 51.9867 86.7056 53.2293L86.7056 53.2367L86.6314 53.2665C86.6314 53.2665 86.6314 53.2665 86.624 53.2665L3.77601 88.5195C2.81163 88.9287 2.18849 89.8737 2.18849 90.9228L2.18849 110.387C2.18849 111.436 2.81163 112.381 3.77601 112.79L86.624 148.043C86.624 148.043 86.624 148.043 86.6314 148.043L86.713 148.073L86.713 148.081C89.5394 149.323 91.4608 152.262 91.1566 155.625C90.808 159.532 87.3139 162.411 83.397 162.411L4.79232 162.411C3.35317 162.411 2.18848 163.579 2.18848 165.023L2.18848 198.698C2.18848 200.142 3.35317 201.31 4.79232 201.31L186.237 201.31C187.677 201.31 188.841 200.142 188.841 198.698L188.841 154.011L188.841 154.033Z" fill="#181819"/>
+							<path d="M191 633.885C191 595.716 160.147 564.771 122.091 564.771L68.9016 564.771C30.8455 564.771 -0.00740187 595.716 -0.00740353 633.885C-0.0074052 672.055 30.8455 703 68.9016 703L122.091 703C160.147 703 191 672.055 191 633.885ZM38.9685 633.885C38.9685 617.62 52.1138 604.436 68.3303 604.436L122.662 604.436C138.879 604.436 152.024 617.62 152.024 633.885C152.024 650.15 138.879 663.335 122.662 663.335L68.3303 663.335C52.1138 663.335 38.9685 650.15 38.9685 633.885Z" fill="#181819"/>
+						</g>
+						<defs>
+							<clipPath id="clip0_190_689">
+							<rect width="703" height="191" fill="white" transform="translate(191) rotate(90)"/>
+							</clipPath>
+						</defs>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</main>
+{%- endblock -%}

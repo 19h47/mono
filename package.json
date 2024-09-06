@@ -1,0 +1,34 @@
+{
+	"name": "@19h47/mono",
+	"version": "0.0.0",
+	"description": "Mono",
+	"type": "module",
+	"homepage": "https://github.com/19h47/mono/blob/master/README.md",
+	"bugs": {
+		"url": "https://github.com/19h47/mono/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/19h47/mono.git"
+	},
+	"license": "ISC",
+	"author": "Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)",
+	"main": "dist/main.js",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build"
+	},
+	"dependencies": {
+		"piecesjs": "^0.2.0",
+		"tailwindcss": "^3.4.10"
+	},
+	"devDependencies": {
+		"autoprefixer": "^10.4.20",
+		"laravel-vite-plugin": "^1.0.5",
+		"postcss": "^8.4.44",
+		"postcss-import": "^16.1.0",
+		"vite": "^5.4.2",
+		"vite-plugin-compression": "^0.5.1",
+		"vite-svg-sprite-wrapper": "^1.3.3"
+	}
+}

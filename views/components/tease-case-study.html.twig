@@ -1,0 +1,50 @@
+{#
+ # Components: Tease Case Study
+ #}
+{% set cats = post.terms( { taxonomy: 'case_study_cat' } ) %}
+
+<article class="{{ html_classes( 'relative h-full group overflow-hidden', post.class ) }}">
+
+	{{-
+		include(
+			'components/image.html.twig',
+			{
+				image: post.thumbnail,
+				classes: [
+					'relative z-1 size-full object-cover object-center',
+					'transition-transform duration-700 ease-in-out',
+					'group-hover:scale-110'
+				]
+			}
+		)
+	-}}
+	<a href="{{ post.link }}" class="peer absolute inset-0 z-4" aria-label="{{ post.title }}"></a>
+
+
+	<div
+		class="absolute z-3 inset-0 flex items-end p-4 prototype:peer-hover:opacity-100 prototype:opacity-0 prototype:transition-opacity prototype:duration-700 prototype:ease-in-out"
+		style="background-color: rgba({{ post.general.color | default( [ 1, 167, 103, 1 ] ) | slice( 0, -1 ) | join( ', ' ) }}, 0.9);"
+	>
+		<div class="{{ html_classes( 'cover/legende', ( post.general.color | slice( 0, -1 ) | join() ) == '000' ? 'text-white' : '', 'grow' ) }}">
+			<h2 class="cover/titre normal-case">{{- post.title -}}</h2>
+
+			{%- if cats or post.general.date -%}
+				<hr class="bg-brand-noir h-[0.125rem] w-full border-none">
+				<div class="uppercase flex items-center h-7">
+					{%- if cats -%}
+						<div class="pr-5 ">
+							{{- cats | join( ' ' ) -}}
+						</div>
+						<hr class="bg-brand-noir h-full w-[0.125rem] border-none">
+					{%- endif -%}
+
+					{%- if post.general.date -%}
+						<div class="grow text-right">
+							{{- post.general.date -}}
+						</div>
+					{%- endif -%}
+				</div>
+			{%- endif -%}
+		</div>
+	</div>
+</article>

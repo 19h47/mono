@@ -1,0 +1,190 @@
+
+{#
+ # Single: Case Study
+ #
+ # @package WordPress
+ # @subpackage MONO
+ #}
+
+{% extends 'index.html.twig' %}
+
+{% block header %}
+	{%- embed 'header.html.twig' -%}
+		{%- block content -%}
+			<a
+				href="{{ site.link }}"
+				class="{{ html_classes(
+					'relative hidden prototype:flex group hover:underline underline-offset-[calc(4em/14)] decoration-[0.125rem] Desk/CTA items-center pl-6 py-[1.40625rem]',
+				) }}"
+			>
+				{{- icon( 'arrow-left', { classes: [ 'absolute right-full size-6 opacity-0 group-hover:opacity-100 duration-700 transition-opacity ease-in-out' ] } ) -}}
+				{{- __( 'Back to projects', 'mono' ) -}}
+			</a>
+		{%- endblock -%}
+	{%- endembed -%}
+{% endblock %}
+
+{%- block content -%}
+
+	{% set cats = post.terms( { taxonomy: 'case_study_cat' } ) %}
+
+	<div style="background-color: rgb({{ post.general.color | default( [ 1, 167, 103, 1 ] ) | slice( 0, -1 ) | join( ', ' ) }});" class="fixed inset-0 z-10 flex items-center justify-center size-full transition-opacity duration-700 ease-in-out [.is-ready_&]:opacity-0 pointer-events-none">
+		<img class="block prototype:w-[8.75rem]" src="{{ asset( 'src/img/svg/logo.svg' ) }}" alt="{{ site.title }}" width="140" height="43">
+	</div>
+
+	<main class="mt-5 mb-20">
+		<div class="container grid grid-cols-12 gap-x-5 items-start">
+			<div class="col-span-12 prototype:col-span-4 prototype:sticky prototype:top-5 prototype:inset-x-0">
+				<h1 class="titre">{{- post.title -}}</h1>
+				<hr class="bg-brand-noir h-[0.125rem] w-full border-none">
+				{%- if cats -%}
+					<div class="flex justify-end">
+						<div class="ml-auto cover-legende py-2.5 px-4 prototype:border-l-brand-noir prototype:border-l-[0.125rem]">
+							{{- cats | join( ' ' ) -}}
+						</div>
+					</div>
+				{%- endif -%}
+
+				{%- if post.meta( 'general' ).content -%}
+					<div class="mt-6 mb-14 texte">
+						<p>{{- post.meta( 'general' ).content | nl2br -}}</p>
+					</div>
+				{%- endif -%}
+
+				{%- if post.meta( 'general' ).place -%}
+					<hr class="bg-brand-noir h-[0.125rem] w-full border-none">
+					<div class="my-2.5 flex items-center info/titre">
+						{{- __( 'Location:', 'mono' ) -}}&nbsp;<span class="info/donnée">{{- post.meta( 'general' ).place -}}</span>
+					</div>
+				{%- endif -%}
+
+
+				{%- if post.meta( 'general' ).missions -%}
+					<hr class="bg-brand-noir h-[0.125rem] w-full border-none">
+					<div class="my-2.5 info/titre">
+						{{ __( 'Missions:', 'mono' ) }}<br>
+						<span class="info/donnée">{{- post.meta( 'general' ).missions -}}</span>
+					</div>
+				{%- endif -%}
+
+				{%- if post.meta( 'general' ).area or post.meta( 'general' ).delivery_date -%}
+					<hr class="bg-brand-noir h-[0.125rem] w-full border-none">
+					<div class="flex gap-x-8">
+						{%- if post.meta( 'general' ).area or post.meta( 'general' ).delivery_date -%}
+							<div class="my-2.5 info/titre">
+								{{ __( 'Area:', 'mono' ) }}<br>
+								<span class="info/donnée">{{- post.meta( 'general' ).area -}}</span>
+							</div>
+						{%- endif -%}
+
+						{%- if post.meta( 'general' ).area and post.meta( 'general' ).delivery_date -%}
+							<hr class="bg-brand-noir w-[0.125rem] h-12 border-none">
+						{%- endif -%}
+
+						{%- if post.meta( 'general' ).area or post.meta( 'general' ).delivery_date -%}
+							<div class="my-2.5 info/titre">
+								{{ __( 'Delivery date:', 'mono' ) }}<br>
+								<span class="info/donnée">{{- post.meta( 'general' ).delivery_date -}}</span>
+							</div>
+						{%- endif -%}
+					</div>
+				{%- endif -%}
+				{%- if post.meta( 'general' ).other_information -%}
+					<ul class="space-y-2.5">
+						{%- for other_information in post.meta( 'general' ).other_information -%}
+							<li class="space-y-2.5">
+								<hr class="bg-brand-noir h-[0.125rem] w-full border-none">
+								<div class="info/titre">
+									{{ __( '%s:', 'mono' ) | format( other_information.label ) }}<br>
+									<span class="info/donnée">{{ other_information.text }}</span>
+								</div>
+							</li>
+						{%- endfor -%}
+					</ul>
+				{%- endif -%}
+			</div>
+
+			<div class="col-span-12 prototype:col-span-8 prototype:space-y-3 mt-12 prototype:mt-3">
+
+
+				<ul class="info/titre gap-x-2 justify-end hidden prototype:flex">
+					<li><a class="underline" href="{{ site.link }}">{{ __( 'Home', 'mono' ) }}</a></li>
+					<li>&gt;</li>
+					<li><a class="underline" href="{{ site.link }}">{{- __( 'Projects', 'mono' ) -}}</a></li>
+					<li>&gt;</li>
+					<li><p>{{- post.title -}}</p></li>
+				</ul>
+
+				{%- if post.meta( 'gallery' ) -%}
+					<style>
+						@media (min-width: 1440px) {
+							.gallery picture:nth-child( 5n + 1 ) { grid-area: 1 / 1 / 2 / 3; }
+							.gallery picture:nth-child( 5n + 2 ) { grid-area: 2 / 1 / 3 / 2; }
+							.gallery picture:nth-child( 5n + 3 ) { grid-area: 2 / 2 / 3 / 3; }
+							.gallery picture:nth-child( 5n + 4 ) { grid-area: 3 / 1 / 4 / 2; }
+							.gallery picture:nth-child( 5n + 5 ) { grid-area: 3 / 2 / 4 / 3; }
+						}
+					</style>
+
+					<div class="space-y-5">
+						{% for row in post.meta( 'gallery' ) | batch( 5 ) %}
+							<div class="gallery grid gap-5 grid-cols-1 prototype:grid-cols-2">
+								{%- for image in row -%}
+									{{-
+										include(
+											'components/image.html.twig',
+											{
+												classes: [
+													'w-full h-block block object-cover object-center',
+													loop.index == 1 ? 'prototype:h-[36.9375rem]',
+													loop.index == 2 ? 'prototype:h-[40.8125rem]',
+													loop.index == 3 ? 'prototype:h-[40.8125rem]',
+													loop.index == 4 ? 'prototype:h-[40.646875rem]',
+													loop.index == 5 ? 'prototype:h-[40.646875rem]',
+												],
+												image: image,
+											}
+										)
+									-}}
+								{%- endfor -%}
+							</div>
+						{%- endfor -%}
+					</div>
+				{%- endif -%}
+			</div>
+		</div>
+	</main>
+
+	<div class="container">
+		<ul class="flex gap-x-4">
+			{%- if post.prev.title -%}
+				<li class="flex flex-col-reverse prototype:flex-row gap-x-5 prototype:items-center">
+
+					<c-navigation-link data-color="rgb({{ post.prev.meta( 'general' ).color | join( ', ' ) }})">
+						<a class="cover/titre flex gap-x-3 prototype:gap-x-4 items-center" href="{{ post.prev.link }}">
+							{{ icon( 'arrow-left', { classes: [ 'size-6' ] } ) }}
+							{{- post.prev.title -}}
+						</a>
+					</c-navigation-link>
+					<hr class="w-[0.125rem] h-11 border-none bg-brand-noir hidden prototype:block">
+					<span class="uppercase">{{- __( 'Previous project', 'mono' ) -}}</span>
+				</li>
+			{%- endif -%}
+			<li class="prototype:hidden"><hr class="w-[0.125rem] min-h-full h-14 border-none bg-brand-noir"></li>
+			{%- if post.next.title -%}
+				<li class="flex flex-col prototype:flex-row gap-x-5 items-center ml-auto">
+					<span class="uppercase">{{- __( 'Next project', 'mono' ) -}}</span>
+					<hr class="w-[0.125rem] h-11 border-none bg-brand-noir hidden prototype:block">
+					<c-navigation-link data-color="rgb({{ post.next.meta( 'general' ).color | join( ', ' ) }})">
+						<a class="cover/titre flex gap-x-3 prototype:gap-x-4 items-center" href="{{ post.next.link }}">
+							{{- post.next.title -}}
+							{{ icon( 'arrow-right', { classes: [ 'size-6' ] } ) }}
+						</a>
+					</c-navigation-link>
+				</li>
+			{%- endif -%}
+		</ul>
+	</div>
+
+{%- endblock -%}
+

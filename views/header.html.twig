@@ -1,0 +1,45 @@
+{#
+ # Header
+ #
+ # @package WordPress
+ # @subpackage Mono
+ # @author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
+ #}
+<header>
+	<div class="container">
+		<div class="flex justify-between items-center">
+			<div class="border-r-[0.125rem] border-brand-noir">
+				<a class="py-3 block pr-6" href="{{ site.link }}" aria-label="{{ site.title }}">
+					<img class="block prototype:w-[8.75rem]" src="{{ asset( 'src/img/svg/logo.svg' ) }}" alt="{{ site.title }}" width="140" height="43">
+				</a>
+			</div>
+			{%- block content -%}
+			{%- endblock -%}
+			<div class="prototype:border-l-[0.125rem] prototype:border-brand-noir text-right prototype:text-left">
+				<ul
+					class=""
+					itemscope
+					itemtype="http://schema.org/SiteNavigationElement"
+				>
+					{% for item in nav_menus.main.get_items() %}
+						<li class="{{ html_classes( 'h-full flex items-center', item.children ? 'group relative' : '' ) }}">
+							<a
+								href="{{ item.url }}"
+								class="{{ html_classes(
+									'hover:underline underline-offset-[calc(4em/14)] decoration-[0.125rem] Desk/CTA flex items-center prototype:pl-6 prototype:py-[1.40625rem]',
+									item.classes | join( ' ' ),
+									item.current or item.current_item_parent or ( 'current_page_parent' in item.classes ) ? 'underline' : '',
+								) }}"
+								itemprop="url"
+								{{ item.is_target_blank or item.is_external ? " target=\"#{item.target}\" rel=\"noopener noreferer\"" }}
+							>
+								{{- item.title -}}
+							</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+		<hr class="border-none h-0.5 bg-brand-noir">
+	</div>
+</header>

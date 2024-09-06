@@ -1,0 +1,30 @@
+{#
+ # Components: Link
+ #}
+
+{% set variant = variant | default( 'primary' ) %}
+
+{%- if url -%}
+	<a
+		href="{{ url }}"
+		{{ target ? 'target="_blank" rel="noopener noreferer"' : '' }}
+		class="{{
+			html_classes(
+				'relative',
+				'inline-flex gap-3 text-center justify-center',
+				'para3 uppercase px-5',
+				'hover:font-semibold',
+				'before:content-[attr(data-title)] before:font-bold before:invisible',
+				variant == 'primary' ? 'bg-brand-red focus:bg-brand-red-dark hover:bg-brand-red-medium text-white py-[0.6875rem] lg:py-4' : '',
+				variant == 'secondary' ? 'bg-brand-blue focus:bg-brand-blue-dark hover:bg-brand-blue-medium text-white py-[0.6875rem] lg:py-4' : '',
+				variant == 'tertiary' ? 'border-brand-blue border-[0.0625rem] hover:bg-brand-blue-medium hover:text-brand-white text-brand-black py-[0.5625rem] lg:py-3.5' : '',
+				classes | default( [] ) | join( ' ' ),
+			)
+		}}"
+		data-title="{{ title }}"
+		{{ attributes ? attributes | map( ( value, key ) => value == '' ? key : "#{key}=\"#{value}\"" ) | join( ' ' ) | raw }}
+	>
+		<span class="absolute inset-0 m-auto size-fit">{{- title -}}</span>
+		{%- block prepend -%}{%- endblock -%}
+	</a>
+{%- endif -%}

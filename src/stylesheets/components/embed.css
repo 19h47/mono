@@ -1,0 +1,5 @@
+@layer components {
+	.embed {
+		@apply [&>iframe]:absolute [&>object]:absolute [&>embed]:absolute [&>iframe]:size-full [&>object]:size-full [&>embed]:size-full aspect-video relative;
+	}
+}

@@ -1,0 +1,25 @@
+{#
+ # Components: Link
+ #}
+
+{% set variant = variant | default( 'primary' ) %}
+
+
+	<button
+		type="{{ type | default( 'button' ) }}"
+		class="{{
+			html_classes(
+				'inline-flex gap-3 text-center',
+				'para3 font-semibold uppercase px-5',
+				variant == 'primary' ? 'bg-brand-red focus:bg-brand-red-dark hover:bg-brand-red-medium text-white py-4' : '',
+				variant == 'secondary' ? 'bg-brand-blue focus:bg-brand-blue-dark hover:bg-brand-blue-medium text-white py-4' : '',
+				variant == 'tertiary' ? 'border-brand-blue border-[0.0625rem] hover:bg-brand-blue-medium hover:text-brand-white text-brand-black py-3.5 [&.is-active]:bg-brand-blue [&.is-active]:focus:bg-brand-blue-dark [&.is-active]:hover:bg-brand-blue-medium [&.is-active]:text-white' : '',
+				classes | default( [] ) | join( ' ' ),
+			)
+		}}"
+		{{ attributes ? attributes | map( ( value, key ) => value == '' ? key : "#{key}=\"#{value}\"" ) | join( ' ' ) | raw }}
+	>
+		{{- title -}}
+		{%- block prepend -%}{%- endblock -%}
+	</button>
+

@@ -1,0 +1,17 @@
+/* Base */
+@import "tailwindcss/base";
+@import "base/base.css";
+@import "base/font-face.css";
+
+/* Components */
+@import "tailwindcss/components";
+@import "components/button.css";
+@import "components/container.css";
+@import "components/embed.css";
+@import "components/link.css";
+@import "components/wysiwyg.css";
+
+/* Utilities */
+@import "tailwindcss/utilities";
+@import "utilities/scrollbar.css";
+@import "utilities/typography.css";

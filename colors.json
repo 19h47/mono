@@ -1,0 +1,10 @@
+{
+	"brand": {
+		"noir": {
+			"DEFAULT": "#181818"
+		},
+		"vert": {
+			"DEFAULT": "#01A767"
+		}
+	}
+}

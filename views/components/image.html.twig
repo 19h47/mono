@@ -1,0 +1,47 @@
+{#
+ # Image
+ #
+ # @param array classes
+ # @param string loading
+ # @param array image
+ # @param object attributes
+ # @param string size
+ #
+ # @package WordPress
+ # @subpackage Mono
+ #}
+
+{%- if image -%}
+	{% set image = get_image( image ) %}
+	{% set size = 'image/gif' == image.post_mime_type ? 'full' : size | default( 'full' ) %}
+
+	<picture{{ size ? " data-size=\"#{ size }\"" : '' }} data-mime-type="{{ image.post_mime_type }}">
+
+		{% if 'image/svg+xml' != image.post_mime_type and 'image/gif' != image.post_mime_type %}
+			<source
+				type="image/webp"
+				srcset="{{ image.src( size ) | towebp }}"
+				{{ sizes ? "sizes=\"#{sizes}\"" : ( image.img_sizes ?  "sizes=\"#{ image.img_sizes( size ) }\"" : 'sizes=\"auto\"' ) }}
+			>
+			<source
+				type="{{ image.post_mime_type }}"
+				srcset="{{ image.srcset ? image.srcset( size ) : image.src( size ) }}"
+				{{ sizes ? "sizes=\"#{sizes}\"" : ( image.img_sizes ?  "sizes=\"#{ image.img_sizes( size ) }\"" : 'sizes=\"auto\"' ) }}
+			>
+		{% endif %}
+
+		<img
+			class="{{ html_classes( '', classes | default( [] ) | join( ' ' ) ) }}"
+			loading="{{ loading | default( 'lazy' ) }}"
+			src="{{ image.src( size ) }}"
+			alt="{{ image.alt }}"
+			width="{{ image.width }}"
+			height="{{ image.height }}"
+			{{ sizes ? "sizes=\"#{sizes}\"" : ( image.img_sizes ?  "sizes=\"#{ image.img_sizes( size ) }\"" : 'sizes=\"auto\"' ) }}
+			{{ attributes ? attributes | map( ( value, key ) => value == '' ? key : "#{key}=\"#{value}\"" ) | join( ' ' ) | raw }}
+		>
+
+	</picture>
+{%- endif -%}
+
+

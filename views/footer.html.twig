@@ -1,0 +1,56 @@
+{#
+ # Footer
+ #
+ # @package WordPress
+ # @subpackage MONO
+ #
+ # @author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
+ #}
+<footer>
+	<div class="container">
+		<hr class="border-none h-0.5 bg-brand-noir">
+		<div class="flex flex-col prototype:flex-row prototype:items-center">
+			<div class="uppercase py-2.5 prototype:mr-32">
+				&copy;{{ 'now' | date( 'Y' ) }}&nbsp;
+				<a
+					href="{{ site.link }}"
+					class="underline prototype:no-underline hover:underline prototype:underline-offset-[calc(4em/14)] prototype:decoration-[0.125rem]"
+				>
+					{{- site.title -}}
+				</a>.&nbsp;{{- __( 'All rights reserved', 'mono' ) -}}
+			</div>
+			<hr class="w-full prototype:w-0.5 h-0.5 prototype:h-11 shrink-0 bg-brand-noir border-none">
+
+			<div class="flex grow prototype:w-auto gap-x-12 prototype:gap-x-0 items-center">
+				<div class="uppercase grow prototype:[&_br]:hidden prototype:text-center">
+					{{- __( 'Website\nby %s', 'mono' ) | nl2br | format( '<a href="https://19h47.fr/" rel="noopener noreferer" target="_blank" class="underline prototype:no-underline hover:underline prototype:underline-offset-[calc(4em/14)] prototype:decoration-[0.125rem]">19h47</a> & <a href="https://persilfragil.fr/" rel="noopener noreferer" target="_blank" class="underline prototype:no-underline hover:underline prototype:underline-offset-[calc(4em/14)] prototype:decoration-[0.125rem]">Persil Fragil</a>' ) -}}
+				</div>
+				<hr class="w-0.5 h-[3.875rem] prototype:h-11 shrink-0 bg-brand-noir border-none">
+				<div class="grow flex justify-end">
+					<ul
+						class=""
+						itemscope
+						itemtype="http://schema.org/SiteNavigationElement"
+					>
+						{% for item in nav_menus.footer.get_items() %}
+							<li class="{{ html_classes( 'h-full flex items-center', item.children ? 'group relative' : '' ) }}">
+								<a
+									href="{{ item.url }}"
+									class="{{ html_classes(
+										'underline prototype:no-underline hover:underline prototype:underline-offset-[calc(4em/14)] prototype:decoration-[0.125rem]',
+										item.classes | join( ' ' ),
+										item.current or item.current_item_parent or ( 'current_page_parent' in item.classes ) ? 'underline' : '',
+									) }}"
+									itemprop="url"
+									{{ item.is_target_blank or item.is_external ? " target=\"#{item.target}\" rel=\"noopener noreferer\"" }}
+								>
+									{{- item.title -}}
+								</a>
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
