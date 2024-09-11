@@ -14,8 +14,8 @@ use Timber\{ Timber };
 $templates    = array( 'pages/404.html.twig' );
 $data         = Timber::context();
 $data['post'] = array(
-	'title'   => __( 'Oops! That page can&rsquo;t be found.', 'mono' ),
-	'content' => '<p>' . __( 'It looks like nothing was found at this location.', 'mono' ) . '</p>',
+	'title'   => __( 'Error 404, this page does not exist', 'mono' ),
+	'content' => '<p>' . __( 'This is not always an easy task...', 'mono' ) . '</p>',
 );
 
 Timber::render( $templates, $data );

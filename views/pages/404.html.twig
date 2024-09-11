@@ -6,3 +6,48 @@
  #}
 
 {% extends 'index.html.twig' %}
+
+{% block header %}
+	{%- embed 'header.html.twig' -%}
+		{%- block content -%}
+			<a
+				href="{{ site.link }}"
+				class="{{ html_classes(
+					'relative hidden prototype:flex group hover:underline underline-offset-[calc(4em/14)] decoration-[0.125rem] Desk/CTA items-center pl-6 py-[1.40625rem]',
+				) }}"
+			>
+				{{- icon( 'arrow-left', { classes: [ 'absolute right-full size-6 opacity-0 group-hover:opacity-100 duration-700 transition-opacity ease-in-out' ] } ) -}}
+				{{- __( 'Back to projects', 'mono' ) -}}
+			</a>
+		{%- endblock -%}
+	{%- endembed -%}
+{% endblock %}
+
+{%- block content -%}
+
+	{% set cats = post.terms( { taxonomy: 'case_study_cat' } ) %}
+
+	<div class="fixed inset-0 z-10 flex items-center justify-center size-full transition-opacity duration-700 delay-300 ease-in-out [.is-ready_&]:opacity-0 pointer-events-none bg-brand-vert">
+		<img class="block prototype:w-[8.75rem]" src="{{ asset( 'src/img/svg/logo.svg' ) }}" alt="{{ site.title }}" width="140" height="43">
+	</div>
+
+	<main class="my-20">
+		<div class="container grid grid-cols-12 items-center gap-5">
+			<div class="col-span-12 prototype:col-span-4 prototype:col-start-3">
+				<img class="aspect-square"width="411" height="411" src="{{ asset( 'src/img/svg/error404.svg' ) }}">
+			</div>
+			<div class="col-span-12 prototype:col-span-5">
+				<p class="error404-texte">{{- post.title -}}</p>
+				<h1 class="error404-titre mt-2">{{- post.content -}}</h1>
+				<a
+					href="{{ site.link }}"
+					class="{{ html_classes(
+						'mt-8 inline-block align-middle underline underline-offset-[calc(4em/14)] decoration-[0.125rem] Desk/CTA',
+					) }}"
+				>
+					{{- __( 'Back to homepage', 'mono' ) -}}
+				</a>
+			</div>
+		</div>
+	</main>
+{%- endblock -%}

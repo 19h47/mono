@@ -37,11 +37,8 @@ class BodyClass {
 	 * @return $classes array
 	 */
 	public function body_classes( array $classes, array $class ): array {
-		if ( is_front_page() || is_page() ) {
-			$classes[] = 'bg-brand-vert';
-		}
 
-		if ( is_page_template( 'templates/about-page.php' ) ) {
+		if ( ! is_singular( 'case_study' ) ) {
 			$classes[] = 'bg-brand-vert';
 		}
 

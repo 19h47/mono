@@ -28,7 +28,9 @@
 
 	{% set cats = post.terms( { taxonomy: 'case_study_cat' } ) %}
 
-	<div style="background-color: rgb({{ post.general.color | default( [ 1, 167, 103, 1 ] ) | slice( 0, -1 ) | join( ', ' ) }});" class="fixed inset-0 z-10 flex items-center justify-center size-full transition-opacity duration-700 ease-in-out [.is-ready_&]:opacity-0 pointer-events-none">
+	<div
+		style="background-color: rgb({{ post.general.color | default( [ 1, 167, 103, 1 ] ) | slice( 0, -1 ) | join( ', ' ) }});"
+		class="fixed inset-0 z-10 flex items-center justify-center size-full transition-opacity delay-300 duration-700 ease-in-out [.is-ready_&]:opacity-0 pointer-events-none">
 		<img class="block prototype:w-[8.75rem]" src="{{ asset( 'src/img/svg/logo.svg' ) }}" alt="{{ site.title }}" width="140" height="43">
 	</div>
 
@@ -46,7 +48,7 @@
 				{%- endif -%}
 
 				{%- if post.meta( 'general' ).content -%}
-					<div class="mt-6 mb-14 texte">
+					<div class="mt-6 mb-14 case-study-texte">
 						<p>{{- post.meta( 'general' ).content | nl2br -}}</p>
 					</div>
 				{%- endif -%}
@@ -69,7 +71,7 @@
 
 				{%- if post.meta( 'general' ).area or post.meta( 'general' ).delivery_date -%}
 					<hr class="bg-brand-noir h-[0.125rem] w-full border-none">
-					<div class="flex gap-x-8">
+					<div class="flex gap-x-8 flex-row">
 						{%- if post.meta( 'general' ).area or post.meta( 'general' ).delivery_date -%}
 							<div class="my-2.5 info/titre">
 								{{ __( 'Area:', 'mono' ) }}<br>
@@ -78,7 +80,7 @@
 						{%- endif -%}
 
 						{%- if post.meta( 'general' ).area and post.meta( 'general' ).delivery_date -%}
-							<hr class="bg-brand-noir w-[0.125rem] h-12 border-none">
+							<hr class="bg-brand-noir w-[0.125rem] h-14 border-none">
 						{%- endif -%}
 
 						{%- if post.meta( 'general' ).area or post.meta( 'general' ).delivery_date -%}
@@ -167,13 +169,13 @@
 						</a>
 					</c-navigation-link>
 					<hr class="w-[0.125rem] h-11 border-none bg-brand-noir hidden prototype:block">
-					<span class="uppercase">{{- __( 'Previous project', 'mono' ) -}}</span>
+					<span class="case-study-navigation">{{- __( 'Previous project', 'mono' ) -}}</span>
 				</li>
 			{%- endif -%}
 			<li class="prototype:hidden"><hr class="w-[0.125rem] min-h-full h-14 border-none bg-brand-noir"></li>
 			{%- if post.next.title -%}
 				<li class="flex flex-col prototype:flex-row gap-x-5 items-center ml-auto">
-					<span class="uppercase">{{- __( 'Next project', 'mono' ) -}}</span>
+					<span class="case-study-navigation">{{- __( 'Next project', 'mono' ) -}}</span>
 					<hr class="w-[0.125rem] h-11 border-none bg-brand-noir hidden prototype:block">
 					<c-navigation-link data-color="rgb({{ post.next.meta( 'general' ).color | join( ', ' ) }})">
 						<a class="cover/titre flex gap-x-3 prototype:gap-x-4 items-center" href="{{ post.next.link }}">

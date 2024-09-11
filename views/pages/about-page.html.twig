@@ -9,7 +9,7 @@
 
 {%- block content -%}
 
-	<div class="fixed inset-0 z-10 flex items-center justify-center size-full bg-brand-vert transition-opacity duration-700 ease-in-out [.is-ready_&]:opacity-0 pointer-events-none">
+	<div class="fixed inset-0 z-10 flex items-center justify-center size-full bg-brand-vert transition-opacity duration-700 delay-300 ease-in-out [.is-ready_&]:opacity-0 pointer-events-none">
 		<img class="block prototype:w-[8.75rem]" src="{{ asset( 'src/img/svg/logo.svg' ) }}" alt="{{ site.title }}" width="140" height="43">
 	</div>
 
@@ -22,13 +22,13 @@
 					intérieure et commerciale
 				</h1>
 				<div class="border-y-[0.125rem] border-y-brand-noir pt-7 pb-16 prototype:pr-10">
-					<p>
+					<p class="about-texte">
 						{{- author.description | nl2br -}}
 					</p>
 				</div>
 				<div class="pt-7 pb-16 prototype:pr-10">
-					<h2 class="title-3">{{- __( 'Career', 'mono' ) -}}</h2>
-					<p>
+					<h2 class="about-titre">{{- __( 'Career', 'mono' ) -}}</h2>
+					<p class="about-texte">
 						{{- author.career | nl2br -}}
 					</p>
 				</div>
