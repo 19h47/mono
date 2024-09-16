@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Mono\n"
-"POT-Creation-Date: 2024-09-10 11:36+0200\n"
-"PO-Revision-Date: 2024-09-10 11:36+0200\n"
+"POT-Creation-Date: 2024-09-16 19:13+0200\n"
+"PO-Revision-Date: 2024-09-16 19:21+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -139,28 +139,28 @@ msgstr "Sauvegarder les changements"
 
 #: includes/Plugins/ACF/IncludeFields/AboutPageFields.php:48
 msgid "About Page Fields"
-msgstr ""
+msgstr "Champs de la page À propos"
 
 #: includes/Plugins/ACF/IncludeFields/BlocksFields.php:53
 msgid "Blocks Fields"
-msgstr ""
+msgstr "Champs de blocs"
 
 #: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:46
 #: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:54
 msgid "General"
-msgstr ""
+msgstr "Général"
 
 #: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:57
 msgid "General information about the case study."
-msgstr ""
+msgstr "Informations générales de l’étude de cas."
 
 #: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:62
 msgid "Color"
-msgstr ""
+msgstr "Couleur"
 
 #: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:65
 msgid "Please select the case study color."
-msgstr ""
+msgstr "Veuillez sélectionner la couleur de l’étude de cas."
 
 #: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:72
 #: includes/helpers.php:112
@@ -170,7 +170,7 @@ msgstr "Contenu"
 #: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:76
 #: includes/helpers.php:116
 msgid "Content block."
-msgstr ""
+msgstr "Contenu du bloc."
 
 #: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:76
 #: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:102
@@ -197,6 +197,8 @@ msgid ""
 "Please indicate the date of the case study, for example <em>January 2024</"
 "em>."
 msgstr ""
+"Veuillez indiquer la date de l’étude de cas, par exemple <em>Janvier 2024</"
+"em>."
 
 #: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:88
 #: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:92
@@ -205,15 +207,15 @@ msgstr "Lieu"
 
 #: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:91
 msgid "Please indicate the location of the case study."
-msgstr ""
+msgstr "Veuillez indiquer le lieu de l’étude de cas."
 
 #: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:96
 msgid "Missions"
-msgstr ""
+msgstr "Missions"
 
 #: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:99
 msgid "Please indicate the missions carried out."
-msgstr ""
+msgstr "Veuillez indiquer les missions réalisées."
 
 #: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:100
 msgid "Mission"
@@ -229,10 +231,12 @@ msgid ""
 "Please indicate the surface area of the case study, for example "
 "<em>100m<sup>2</sup></em>."
 msgstr ""
+"Veuillez indiquer la superficie de l’étude de cas, par exemple <em>100 "
+"m<sup>2</sup></em>."
 
 #: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:115
 msgid "Please indicate the case study delivery date."
-msgstr ""
+msgstr "Veuillez indiquer la date de livraison de l’étude de cas."
 
 #: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:116
 msgid "Delivery date"
@@ -244,11 +248,11 @@ msgstr "Autres informations"
 
 #: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:123
 msgid "Please add any other information."
-msgstr ""
+msgstr "Veuillez ajouter toute autre information."
 
 #: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:125
 msgid "Add other information"
-msgstr ""
+msgstr "Ajouter d’autres informations"
 
 #: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:129
 #: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:136
@@ -259,6 +263,8 @@ msgstr "Label"
 msgid ""
 "Information label, for example <em>Visual Identity</em> or <em>Photos</em>."
 msgstr ""
+"Label de l’information, par exemple <em>Identité visuelle</em> ou "
+"<em>Photos</em>."
 
 #: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:141
 #: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:148
@@ -273,7 +279,7 @@ msgstr "Texte"
 
 #: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:144
 msgid "Information text."
-msgstr ""
+msgstr "Texte de l’information."
 
 #: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:157
 #: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:165
@@ -285,6 +291,8 @@ msgid ""
 "Please add as many images as needed in the gallery.<br>The order can be "
 "changed simply by dragging and dropping the image."
 msgstr ""
+"Veuillez ajouter autant d’images que nécessaire dans la galerie.<br>L’ordre "
+"peut être modifié simplement en faisant glisser et en déposant l’image."
 
 #: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:179
 msgid "Product Post Fields"
@@ -817,40 +825,40 @@ msgstr "Vous avez un projet ?"
 msgid "Contact me"
 msgstr "Contactez-moi"
 
-#: views/pages/single-case-study.html.twig:57
+#: views/pages/single-case-study.html.twig:59
 msgid "Location:"
 msgstr "Lieu :"
 
-#: views/pages/single-case-study.html.twig:65
+#: views/pages/single-case-study.html.twig:67
 msgid "Missions:"
 msgstr "Missions :"
 
-#: views/pages/single-case-study.html.twig:75
+#: views/pages/single-case-study.html.twig:77
 msgid "Area:"
 msgstr "Surface :"
 
-#: views/pages/single-case-study.html.twig:86
+#: views/pages/single-case-study.html.twig:88
 msgid "Delivery date:"
 msgstr "Livraison :"
 
-#: views/pages/single-case-study.html.twig:98
+#: views/pages/single-case-study.html.twig:100
 #, php-format
 msgid "%s:"
 msgstr "%s :"
 
-#: views/pages/single-case-study.html.twig:111
+#: views/pages/single-case-study.html.twig:113
 msgid "Home"
 msgstr "Accueil"
 
-#: views/pages/single-case-study.html.twig:113
+#: views/pages/single-case-study.html.twig:115
 msgid "Projects"
 msgstr "Projets"
 
-#: views/pages/single-case-study.html.twig:170
+#: views/pages/single-case-study.html.twig:172
 msgid "Previous project"
 msgstr "Projet précédent"
 
-#: views/pages/single-case-study.html.twig:176
+#: views/pages/single-case-study.html.twig:178
 msgid "Next project"
 msgstr "Projet suivant"
 

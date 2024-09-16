@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Mono\n"
-"POT-Creation-Date: 2024-09-10 11:37+0200\n"
+"POT-Creation-Date: 2024-09-16 19:12+0200\n"
 "PO-Revision-Date: 2024-09-03 11:41+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -812,40 +812,40 @@ msgstr ""
 msgid "Contact me"
 msgstr ""
 
-#: views/pages/single-case-study.html.twig:57
+#: views/pages/single-case-study.html.twig:59
 msgid "Location:"
 msgstr ""
 
-#: views/pages/single-case-study.html.twig:65
+#: views/pages/single-case-study.html.twig:67
 msgid "Missions:"
 msgstr ""
 
-#: views/pages/single-case-study.html.twig:75
+#: views/pages/single-case-study.html.twig:77
 msgid "Area:"
 msgstr ""
 
-#: views/pages/single-case-study.html.twig:86
+#: views/pages/single-case-study.html.twig:88
 msgid "Delivery date:"
 msgstr ""
 
-#: views/pages/single-case-study.html.twig:98
+#: views/pages/single-case-study.html.twig:100
 #, php-format
 msgid "%s:"
 msgstr ""
 
-#: views/pages/single-case-study.html.twig:111
+#: views/pages/single-case-study.html.twig:113
 msgid "Home"
 msgstr ""
 
-#: views/pages/single-case-study.html.twig:113
+#: views/pages/single-case-study.html.twig:115
 msgid "Projects"
 msgstr ""
 
-#: views/pages/single-case-study.html.twig:170
+#: views/pages/single-case-study.html.twig:172
 msgid "Previous project"
 msgstr ""
 
-#: views/pages/single-case-study.html.twig:176
+#: views/pages/single-case-study.html.twig:178
 msgid "Next project"
 msgstr ""
 

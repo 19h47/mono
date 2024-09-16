@@ -106,6 +106,7 @@ class CaseStudyPostFields {
 						'type'         => 'text',
 						'instructions' => __( 'Please indicate the surface area of the case study, for example <em>100m<sup>2</sup></em>.', 'mono' ),
 						'placeholder'  => __( 'Area', 'mono' ),
+						'wrapper'      => array( 'width' => 6 / 12 * 100 ),
 					),
 					array(
 						'key'          => 'field_' . $key . '_general_delivery_date',
@@ -114,6 +115,7 @@ class CaseStudyPostFields {
 						'type'         => 'text',
 						'instructions' => __( 'Please indicate the case study delivery date.', 'mono' ),
 						'placeholder'  => __( 'Delivery date', 'mono' ),
+						'wrapper'      => array( 'width' => 6 / 12 * 100 ),
 					),
 					array(
 						'key'          => 'field_' . $key . '_general_other_information',
