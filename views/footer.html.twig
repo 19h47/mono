@@ -8,9 +8,9 @@
  #}
 <footer>
 	<div class="container">
-		<hr class="border-none h-0.5 bg-brand-noir">
+		<hr class="border-none h-0.5 bg-current">
 		<div class="flex flex-col prototype:flex-row prototype:items-center">
-			<div class="uppercase py-2.5 prototype:mr-32">
+			<div class="py-2.5 prototype:mr-32">
 				&copy;{{ 'now' | date( 'Y' ) }}&nbsp;
 				<a
 					href="{{ site.link }}"
@@ -22,7 +22,7 @@
 			<hr class="w-full prototype:w-0.5 h-0.5 prototype:h-11 shrink-0 bg-brand-noir border-none">
 
 			<div class="flex grow prototype:w-auto gap-x-12 prototype:gap-x-0 items-center">
-				<div class="uppercase grow prototype:[&_br]:hidden prototype:text-center">
+				<div class="grow prototype:[&_br]:hidden prototype:text-center">
 					{{- __( 'Website\nby %s', 'mono' ) | nl2br | format( '<a href="https://19h47.fr/" rel="noopener noreferer" target="_blank" class="underline prototype:no-underline hover:underline prototype:underline-offset-[calc(4em/14)] prototype:decoration-[0.125rem]">19h47</a> & <a href="https://persilfragil.fr/" rel="noopener noreferer" target="_blank" class="underline prototype:no-underline hover:underline prototype:underline-offset-[calc(4em/14)] prototype:decoration-[0.125rem]">Persil Fragil</a>' ) -}}
 				</div>
 				<hr class="w-0.5 h-[3.875rem] prototype:h-11 shrink-0 bg-brand-noir border-none">

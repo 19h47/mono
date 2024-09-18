@@ -7,16 +7,32 @@
 
 {% extends 'index.html.twig' %}
 
+{% block header %}
+	{%- embed 'header.html.twig' -%}
+		{%- block content -%}
+			<a
+				href="{{ site.link }}"
+				class="{{ html_classes(
+					'relative hidden prototype:flex group hover:underline underline-offset-[calc(4em/14)] decoration-[0.125rem] Desk/CTA items-center pl-6 py-[1.65625rem]',
+				) }}"
+			>
+				{{- icon( 'arrow-left', { classes: [ 'absolute right-full size-6 opacity-0 group-hover:opacity-100 duration-700 transition-opacity ease-in-out' ] } ) -}}
+				{{- __( 'Back to projects', 'mono' ) -}}
+			</a>
+		{%- endblock -%}
+	{%- endembed -%}
+{% endblock %}
+
 {%- block content -%}
 
-	<div class="fixed inset-0 z-10 flex items-center justify-center size-full bg-brand-vert transition-opacity duration-700 delay-300 ease-in-out [.is-ready_&]:opacity-0 pointer-events-none">
+	<div class="fixed inset-0 z-10 flex items-center justify-center size-full bg-brand-vert transition-opacity duration-700 delay-700 ease-in-out [.is-ready_&]:opacity-0 pointer-events-none">
 		<img class="block prototype:w-[8.75rem]" src="{{ asset( 'src/img/svg/logo.svg' ) }}" alt="{{ site.title }}" width="140" height="43">
 	</div>
 
 	<main>
 		<div class="container overflow-hidden grid grid-cols-12 divide-y-[0.125rem] prototype:divide-y-0 prototype:divide-x-[0.125rem] divide-brand-noir">
 			<div class="col-span-12 prototype:col-span-6">
-				<h1 class="titre">
+				<h1 class="about-titre">
 					Agence d’architecture
 					<hr class="border-none bg-brand-noir h-0.5">
 					intérieure et commerciale
@@ -39,28 +55,28 @@
 						{{- include( 'components/image.html.twig', { image: author.image, classes: [ 'aspect-[388/501.59] object-cover' ] } ) -}}
 					</div>
 				{%- else -%}
-					<div class="aspect-[388/501.59] bg-brand-noir my-7 prototype:mx-7"></div>
+					<div class="aspect-[388/501.59] bg-current my-7 prototype:mx-7"></div>
 				{%- endif -%}
 				<hr class="border-none bg-brand-noir w-full h-0.5">
 				<div class="nom border-b-brand-noir border-b-[0.125rem] flex items-center justify-center h-[4.125rem]">
 					<p class="text-center whitespace-nowrap">Gwenhael AOUSTIN</p>
 				</div>
-				<div class="border-b-brand-noir border-b-[0.125rem] prototype:px-7 py-4">
+				<div class="border-b-current border-b-[0.125rem] prototype:px-7 py-4">
 					<p class="telephone">{{- __( 'Phone', 'mono' ) -}}</p>
-					<a href="tel:{{ phone_number | replace( { ' ' : '' } ) | trim }}" class="block Desk/CTA_telephone mt-5 mb-4 text-nowrap">
+					<a href="tel:{{ phone_number | replace( { ' ' : '' } ) | trim }}" class="block Desk/CTA_telephone text-nowrap">
 						{{- phone_number -}}
 					</a>
 				</div>
-				<div class="border-b-brand-noir border-b-[0.125rem] prototype:px-7 py-4">
+				<div class="border-b-current border-b-[0.125rem] prototype:px-7 py-4">
 					<p class="email">{{- __( 'Email address', 'mono' ) -}}</p>
 					<a href="mailto:{{ public_email }}" class="block Desk/CTA_email hover:underline underline-offset-[calc(4em/14)] decoration-[0.125rem]">
 						{{- public_email -}}
 					</a>
 				</div>
-				<div class="flex">
+				<div class="flex divide-x-[0.125rem] divide-current">
 					{%- for social in socials -%}
 						<a href="{{ social.link }}" class="Desk/CTA_social py-6 lg:py-[1.1875rem] grow text-center hover:underline underline-offset-[calc(4em/14)] decoration-[0.125rem]" rel="noopener noreferer" target="_blank">{{- social.title -}}</a>
-						{{- loop.last ? '' : '<hr class="w-0.5 bg-brand-noir border-none h-[3.75rem]">' -}}
+						{# {{- loop.last ? '' : '<hr class="w-0.5 bg-current border-none h-[3.75rem]">' -}} #}
 					{%- endfor -%}
 				</div>
 			</div>

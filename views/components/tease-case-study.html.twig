@@ -28,23 +28,22 @@
 		<div class="{{ html_classes( 'cover/legende', ( post.general.color | slice( 0, -1 ) | join() ) == '000' ? 'text-white' : '', 'grow' ) }}">
 			<h2 class="cover/titre normal-case">{{- post.title -}}</h2>
 
-			{%- if cats or post.general.date -%}
-				<hr class="bg-brand-noir h-[0.125rem] w-full border-none">
-				<div class="uppercase flex items-center h-7">
-					{%- if cats -%}
-						<div class="pr-5 ">
-							{{- cats | join( ' ' ) -}}
-						</div>
-						<hr class="bg-brand-noir h-full w-[0.125rem] border-none">
-					{%- endif -%}
+			<hr class="bg-current mt-2 h-[0.125rem] w-full border-none">
+			<div class="uppercase flex items-center h-7">
+				{%- if cats -%}
+					<div class="pr-5">
+						{{- cats | join( ' ' ) -}}
+					</div>
+					<hr class="bg-current h-full w-[0.125rem] border-none">
+				{%- endif -%}
 
-					{%- if post.general.date -%}
-						<div class="grow text-right">
-							{{- post.general.date -}}
-						</div>
-					{%- endif -%}
+
+				<div class="grow text-right">
+					{{- ( post.general.date ? post.general.date : post.general.delivery_date ) | default( post.date( 'M Y' ) )  -}}
 				</div>
-			{%- endif -%}
+
+			</div>
+
 		</div>
 	</div>
 </article>

@@ -24,7 +24,6 @@
 	}
 
 	.cover\/legende {
-		font-variation-settings: "wght" 500;
 		font-size: 0.6875rem /* 11px */;
 		line-height: normal;
 		letter-spacing: 0.14em;
@@ -40,19 +39,17 @@
 		letter-spacing: 0.05em;
 
 		@screen prototype {
-			letter-spacing: 0.04em;
-			font-size: 1.875rem /* 30px */;
+			letter-spacing: 0.08em;
+			font-size: 1.75rem /* 28px */;
 		}
 	}
 
 	.texte {
-		font-variation-settings: "wght" 500;
 		font-size: 0.75rem /* 12px */;
 		line-height: normal;
 	}
 
 	.info\/titre {
-		font-variation-settings: "wght" 500;
 		font-size: 0.5rem /* 8px */;
 		line-height: calc(18 / 8);
 
@@ -70,9 +67,8 @@
 	}
 
 	.Desk\/CTA {
-		font-variation-settings: "wght" 500;
 		font-size: 0.875rem /* 14px */;
-		line-height: cal(14 / 22);
+		line-height: normal;
 
 		letter-spacing: 0.21em;
 		text-transform: uppercase;
@@ -81,7 +77,7 @@
 	.Desk\/CTA_contact {
 		@apply font-heading;
 
-		font-variation-settings: "wght" 700;
+		font-variation-settings: "wght" 500;
 		font-size: 2.625rem /* 42px */;
 
 		line-height: normal;
@@ -93,7 +89,6 @@
 	}
 
 	.Desk\/CTA_social {
-		font-variation-settings: "wght" 500;
 		font-size: 0.75rem /* 12px */;
 		line-height: normal;
 		letter-spacing: 0.4em;
@@ -107,7 +102,6 @@
 
 	.telephone,
 	.email {
-		font-variation-settings: "wght" 500;
 		font-size: 0.875rem /* 14px */;
 		line-height: calc(23 / 14);
 
@@ -180,20 +174,17 @@
 	}
 
 	.about-texte {
-		font-variation-settings: "wght" 500;
 		font-size: 0.9375rem /* 15px */;
 		line-height: calc(23 / 15);
 		letter-spacing: 0.04em;
 	}
 
 	.case-study-texte {
-		font-variation-settings: "wght" 500;
 		font-size: 0.75rem /* 12px */;
 		line-height: calc(23 / 15);
 	}
 
 	.case-study-navigation {
-		font-variation-settings: "wght" 500;
 		font-size: 0.625rem /* 10px */;
 		line-height: 1.8;
 		letter-spacing: 0.14em;
@@ -201,7 +192,6 @@
 	}
 
 	.error404-texte {
-		font-variation-settings: "wght" 500;
 		font-size: 10px;
 		line-height: 18px;
 		letter-spacing: 0.12em;

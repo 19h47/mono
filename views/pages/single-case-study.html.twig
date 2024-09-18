@@ -30,7 +30,7 @@
 
 	<div
 		style="background-color: rgb({{ post.general.color | default( [ 1, 167, 103, 1 ] ) | slice( 0, -1 ) | join( ', ' ) }});"
-		class="fixed inset-0 z-10 flex items-center justify-center size-full transition-opacity delay-300 duration-700 ease-in-out [.is-ready_&]:opacity-0 pointer-events-none">
+		class="fixed inset-0 z-10 flex items-center justify-center size-full transition-opacity delay-700 duration-700 ease-in-out [.is-ready_&]:opacity-0 pointer-events-none">
 		<img class="block prototype:w-[8.75rem]" src="{{ asset( 'src/img/svg/logo.svg' ) }}" alt="{{ site.title }}" width="140" height="43">
 	</div>
 
@@ -38,10 +38,10 @@
 		<div class="container grid grid-cols-12 gap-x-5 items-start">
 			<div class="col-span-12 prototype:col-span-4 prototype:sticky prototype:top-5 prototype:inset-x-0">
 				<h1 class="titre">{{- post.title -}}</h1>
-				<hr class="bg-brand-noir h-[0.125rem] w-full border-none">
 				{%- if cats -%}
+					<hr class="bg-brand-noir h-[0.125rem] w-full border-none">
 					<div class="flex justify-end">
-						<div class="ml-auto cover-legende py-2.5 px-4 prototype:border-l-brand-noir prototype:border-l-[0.125rem]">
+						<div class="ml-auto cover/legende py-2.5 px-4 prototype:border-l-current uppercase prototype:border-l-[0.125rem]">
 							{{- cats | join( ' ' ) -}}
 						</div>
 					</div>

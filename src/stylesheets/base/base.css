@@ -22,4 +22,11 @@
 			);
 		}
 	}
+
+	body {
+
+			font-family: "obviously-variable",sans-serif;
+			font-variation-settings: 'ital' 0, 'wdth' 150, 'wght' 500;
+
+	}
 }

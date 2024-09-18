@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Mono\n"
-"POT-Creation-Date: 2024-09-16 19:13+0200\n"
-"PO-Revision-Date: 2024-09-16 19:21+0200\n"
+"POT-Creation-Date: 2024-09-18 10:54+0200\n"
+"PO-Revision-Date: 2024-09-18 11:03+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -137,10 +137,6 @@ msgstr "Thème"
 msgid "Save Changes"
 msgstr "Sauvegarder les changements"
 
-#: includes/Plugins/ACF/IncludeFields/AboutPageFields.php:48
-msgid "About Page Fields"
-msgstr "Champs de la page À propos"
-
 #: includes/Plugins/ACF/IncludeFields/BlocksFields.php:53
 msgid "Blocks Fields"
 msgstr "Champs de blocs"
@@ -173,8 +169,6 @@ msgid "Content block."
 msgstr "Contenu du bloc."
 
 #: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:76
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:102
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:144
 #: includes/helpers.php:84 includes/helpers.php:92
 msgid "Line breaks are allowed."
 msgstr "Les sauts de ligne sont autorisés."
@@ -228,65 +222,61 @@ msgstr "Surface"
 
 #: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:107
 msgid ""
-"Please indicate the surface area of the case study, for example "
-"<em>100m<sup>2</sup></em>."
+"Please indicate the surface area of the case study, for example <em>100m²</"
+"em>."
 msgstr ""
-"Veuillez indiquer la superficie de l’étude de cas, par exemple <em>100 "
-"m<sup>2</sup></em>."
+"Veuillez indiquer la superficie de l’étude de cas, par exemple <em>100 m²</"
+"em>."
 
-#: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:115
-msgid "Please indicate the case study delivery date."
-msgstr "Veuillez indiquer la date de livraison de l’étude de cas."
-
-#: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:116
+#: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:113
+#: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:117
 msgid "Delivery date"
 msgstr "Date de livraison"
 
-#: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:120
+#: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:116
+msgid "Please indicate the case study delivery date."
+msgstr "Veuillez indiquer la date de livraison de l’étude de cas."
+
+#: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:122
 msgid "Other information"
 msgstr "Autres informations"
 
-#: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:123
+#: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:125
 msgid "Please add any other information."
 msgstr "Veuillez ajouter toute autre information."
 
-#: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:125
+#: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:127
 msgid "Add other information"
 msgstr "Ajouter d’autres informations"
 
-#: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:129
-#: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:136
+#: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:131
+#: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:138
 msgid "Label"
 msgstr "Label"
 
-#: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:132
+#: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:134
 msgid ""
 "Information label, for example <em>Visual Identity</em> or <em>Photos</em>."
 msgstr ""
 "Label de l’information, par exemple <em>Identité visuelle</em> ou "
 "<em>Photos</em>."
 
-#: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:141
-#: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:148
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:99
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:104
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:140
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:145
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:193
+#: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:143
+#: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:150
 #: includes/helpers.php:89 includes/helpers.php:94
 msgid "Text"
 msgstr "Texte"
 
-#: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:144
-msgid "Information text."
-msgstr "Texte de l’information."
+#: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:146
+msgid "Information text, for example <em>Art Vandelay</em>."
+msgstr "Texte de l’information, par exemple <em>Art Vandelay</em>."
 
-#: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:157
-#: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:165
+#: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:159
+#: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:167
 msgid "Gallery"
 msgstr "Galerie"
 
-#: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:168
+#: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:170
 msgid ""
 "Please add as many images as needed in the gallery.<br>The order can be "
 "changed simply by dragging and dropping the image."
@@ -294,105 +284,9 @@ msgstr ""
 "Veuillez ajouter autant d’images que nécessaire dans la galerie.<br>L’ordre "
 "peut être modifié simplement en faisant glisser et en déposant l’image."
 
-#: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:179
+#: includes/Plugins/ACF/IncludeFields/CaseStudyPostFields.php:181
 msgid "Product Post Fields"
 msgstr "Champs de la page produit"
-
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:46
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:53
-msgid "Hero"
-msgstr "Hero"
-
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:61
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:166
-msgid "Image"
-msgstr "Image"
-
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:64
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:169
-msgid "Block image."
-msgstr "Image du bloc."
-
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:76
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:83
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:109
-msgid "Product Categories"
-msgstr "Catégories de produits"
-
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:87
-msgid "If no category is selected, nothing will be displayed."
-msgstr "Si aucune catégorie n’est sélectionnée, rien ne s’affichera."
-
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:91
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:95
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:185
-#: includes/helpers.php:80 includes/helpers.php:85
-msgid "Title"
-msgstr "Titre"
-
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:94
-#: includes/helpers.php:84
-msgid "Title block."
-msgstr "Titre du bloc."
-
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:102
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:144
-msgid "Text block."
-msgstr "Texte du bloc."
-
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:126
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:133
-msgid "Catchphrase"
-msgstr "Phrase d’accroche"
-
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:151
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:158
-msgid "Rental"
-msgstr "Location"
-
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:177
-msgid "Rentals"
-msgstr "Locations"
-
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:181
-msgid "Add Rental"
-msgstr "Ajouter une Location"
-
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:203
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:206
-msgid "Caption"
-msgstr "Légende"
-
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:215
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:222
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:230
-msgid "References"
-msgstr "Références"
-
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:246
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:253
-msgid "Contact"
-msgstr "Contact"
-
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:260
-msgid "Form"
-msgstr "Formulaire"
-
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:272
-msgid "Maps"
-msgstr "Cartes"
-
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:279
-msgid "Image Mobile"
-msgstr "Image mobile"
-
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:290
-msgid "Image Desktop"
-msgstr "Image bureau"
-
-#: includes/Plugins/ACF/IncludeFields/FrontPageFields.php:308
-msgid "Front Page Fields"
-msgstr "Champs de la page d’accueil"
 
 #: includes/Plugins/ACF/IncludeFields/ThemeFields.php:48
 msgid "Theme Fields"
@@ -772,6 +666,14 @@ msgstr "Menu du pied de page"
 msgid "Legals Menu"
 msgstr "Menu des mentions légales"
 
+#: includes/helpers.php:80 includes/helpers.php:85
+msgid "Title"
+msgstr "Titre"
+
+#: includes/helpers.php:84
+msgid "Title block."
+msgstr "Titre du bloc."
+
 #: includes/helpers.php:92
 msgid "Text block. (Optionnal)"
 msgstr "Texte du bloc. (Optionnel)"
@@ -794,10 +696,11 @@ msgid ""
 "Website\n"
 "by %s"
 msgstr ""
-"Site internet\n"
+"Site Internet\n"
 "par %s"
 
-#: views/pages/404.html.twig:20 views/pages/single-case-study.html.twig:21
+#: views/pages/404.html.twig:20 views/pages/about-page.html.twig:20
+#: views/pages/single-case-study.html.twig:21
 msgid "Back to projects"
 msgstr "Retour aux projets"
 
@@ -805,15 +708,15 @@ msgstr "Retour aux projets"
 msgid "Back to homepage"
 msgstr "Retournez à la page d’accueil"
 
-#: views/pages/about-page.html.twig:30
+#: views/pages/about-page.html.twig:46
 msgid "Career"
 msgstr "Parcours"
 
-#: views/pages/about-page.html.twig:49
+#: views/pages/about-page.html.twig:65
 msgid "Phone"
 msgstr "Téléphone"
 
-#: views/pages/about-page.html.twig:55
+#: views/pages/about-page.html.twig:71
 msgid "Email address"
 msgstr "Adresse e-mail"
 
@@ -839,7 +742,7 @@ msgstr "Surface :"
 
 #: views/pages/single-case-study.html.twig:88
 msgid "Delivery date:"
-msgstr "Livraison :"
+msgstr "Date de livraison :"
 
 #: views/pages/single-case-study.html.twig:100
 #, php-format
@@ -881,6 +784,66 @@ msgstr "Jérémy Levron"
 #. Author URI of the plugin/theme
 msgid "https://19h47.fr/"
 msgstr "https://19h47.fr/"
+
+#~ msgid "Information text."
+#~ msgstr "Texte de l’information."
+
+#~ msgid "About Page Fields"
+#~ msgstr "Champs de la page À propos"
+
+#~ msgid "Hero"
+#~ msgstr "Hero"
+
+#~ msgid "Image"
+#~ msgstr "Image"
+
+#~ msgid "Block image."
+#~ msgstr "Image du bloc."
+
+#~ msgid "Product Categories"
+#~ msgstr "Catégories de produits"
+
+#~ msgid "If no category is selected, nothing will be displayed."
+#~ msgstr "Si aucune catégorie n’est sélectionnée, rien ne s’affichera."
+
+#~ msgid "Text block."
+#~ msgstr "Texte du bloc."
+
+#~ msgid "Catchphrase"
+#~ msgstr "Phrase d’accroche"
+
+#~ msgid "Rental"
+#~ msgstr "Location"
+
+#~ msgid "Rentals"
+#~ msgstr "Locations"
+
+#~ msgid "Add Rental"
+#~ msgstr "Ajouter une Location"
+
+#~ msgid "Caption"
+#~ msgstr "Légende"
+
+#~ msgid "References"
+#~ msgstr "Références"
+
+#~ msgid "Contact"
+#~ msgstr "Contact"
+
+#~ msgid "Form"
+#~ msgstr "Formulaire"
+
+#~ msgid "Maps"
+#~ msgstr "Cartes"
+
+#~ msgid "Image Mobile"
+#~ msgstr "Image mobile"
+
+#~ msgid "Image Desktop"
+#~ msgstr "Image bureau"
+
+#~ msgid "Front Page Fields"
+#~ msgstr "Champs de la page d’accueil"
 
 #~ msgid "Oops! That page can&rsquo;t be found."
 #~ msgstr "Oups ! Cette page est introuvable."
