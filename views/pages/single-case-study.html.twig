@@ -41,7 +41,7 @@
 				{%- if cats -%}
 					<hr class="bg-brand-noir h-[0.125rem] w-full border-none">
 					<div class="flex justify-end">
-						<div class="ml-auto cover/legende py-2.5 px-4 prototype:border-l-current uppercase prototype:border-l-[0.125rem]">
+						<div class="ml-auto cover/legende py-[0.609375rem] px-4 prototype:border-l-current uppercase prototype:border-l-[0.125rem]">
 							{{- cats | join( ' ' ) -}}
 						</div>
 					</div>
@@ -55,7 +55,7 @@
 
 				{%- if post.meta( 'general' ).place -%}
 					<hr class="bg-brand-noir h-[0.125rem] w-full border-none">
-					<div class="my-2.5 flex items-center info/titre">
+					<div class="my-[0.609375rem] flex items-center info/titre">
 						{{- __( 'Location:', 'mono' ) -}}&nbsp;<span class="info/donnée">{{- post.meta( 'general' ).place -}}</span>
 					</div>
 				{%- endif -%}
@@ -63,7 +63,7 @@
 
 				{%- if post.meta( 'general' ).missions -%}
 					<hr class="bg-brand-noir h-[0.125rem] w-full border-none">
-					<div class="my-2.5 info/titre">
+					<div class="my-[0.609375rem] info/titre">
 						{{ __( 'Missions:', 'mono' ) }}<br>
 						<span class="info/donnée">{{- post.meta( 'general' ).missions -}}</span>
 					</div>
@@ -73,18 +73,18 @@
 					<hr class="bg-brand-noir h-[0.125rem] w-full border-none">
 					<div class="flex gap-x-8 flex-row">
 						{%- if post.meta( 'general' ).area or post.meta( 'general' ).delivery_date -%}
-							<div class="my-2.5 info/titre">
+							<div class="my-[0.609375rem] info/titre">
 								{{ __( 'Area:', 'mono' ) }}<br>
 								<span class="info/donnée">{{- post.meta( 'general' ).area -}}</span>
 							</div>
 						{%- endif -%}
 
 						{%- if post.meta( 'general' ).area and post.meta( 'general' ).delivery_date -%}
-							<hr class="bg-brand-noir w-[0.125rem] h-14 border-none">
+							<hr class="bg-brand-noir w-[0.125rem] h-[3.625rem] border-none">
 						{%- endif -%}
 
 						{%- if post.meta( 'general' ).area or post.meta( 'general' ).delivery_date -%}
-							<div class="my-2.5 info/titre">
+							<div class="my-[0.609375rem] info/titre">
 								{{ __( 'Delivery date:', 'mono' ) }}<br>
 								<span class="info/donnée">{{- post.meta( 'general' ).delivery_date -}}</span>
 							</div>
@@ -92,9 +92,9 @@
 					</div>
 				{%- endif -%}
 				{%- if post.meta( 'general' ).other_information -%}
-					<ul class="space-y-2.5">
+					<ul class="space-y-[0.609375rem]">
 						{%- for other_information in post.meta( 'general' ).other_information -%}
-							<li class="space-y-2.5">
+							<li class="space-y-[0.609375rem]">
 								<hr class="bg-brand-noir h-[0.125rem] w-full border-none">
 								<div class="info/titre">
 									{{ __( '%s:', 'mono' ) | format( other_information.label ) }}<br>

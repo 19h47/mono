@@ -41,11 +41,6 @@ class Enqueue {
 		// Add custom fonts, used in the main stylesheet.
 		$deps = array();
 
-		foreach ( get_webfonts() as $name => $url ) {
-			wp_register_style( 'font-' . $name, $url, array(), '1.0.0' );
-			$deps[] = "font-$name";
-		}
-
 		// register theme-style-css
 		$filename = Vite::asset( 'src/stylesheets/styles.css' );
 

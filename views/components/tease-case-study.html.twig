@@ -22,7 +22,7 @@
 
 
 	<div
-		class="absolute z-3 inset-0 flex items-end p-4 prototype:peer-hover:opacity-100 prototype:opacity-0 prototype:transition-opacity prototype:duration-700 prototype:ease-in-out"
+		class="absolute z-3 inset-0 flex items-end p-4 peer-hover:opacity-100 opacity-0 transition-opacity duration-700 ease-in-out"
 		style="background-color: rgba({{ post.general.color | default( [ 1, 167, 103, 1 ] ) | slice( 0, -1 ) | join( ', ' ) }}, 0.9);"
 	>
 		<div class="{{ html_classes( 'cover/legende', ( post.general.color | slice( 0, -1 ) | join() ) == '000' ? 'text-white' : '', 'grow' ) }}">

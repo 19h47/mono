@@ -9,7 +9,7 @@
 <html
     itemscope
     itemtype="http://schema.org/WebPage"
-    {{ html_class( 'no-js no-touch is-on-top scroll-smooth bg-brand-noir' ) }}
+    {{ html_class( 'no-js no-touch is-on-top scroll-smooth bg-brand-noir text-brand-noir' ) }}
     {{ site.language_attributes }}
 >
 	<head>
@@ -27,13 +27,18 @@
 	<body>
 		{{- fn( 'wp_body_open' ) -}}
 
-		<div id="page" {{ body_class( 'pt-5 pb-8 prototype:pb-9 text-brand-noir' ) }}>
+		<div id="page" {{ body_class( 'pt-5 pb-8 prototype:pb-9' ) }}>
 
 			{% block header %}
 				{{- include( 'header.html.twig', { classes: [] } ) -}}
 			{% endblock %}
 
 			{%- block content -%}
+				<div class="fixed inset-0 z-10 flex items-center justify-center size-full bg-brand-vert transition-opacity duration-700 delay-700 ease-in-out [.is-ready_&]:opacity-0 pointer-events-none">
+					<img class="block prototype:w-[8.75rem]" src="{{ asset( 'src/img/svg/logo.svg' ) }}" alt="{{ site.title }}" width="140" height="43">
+				</div>
+
+
 				<main class="mt-12 mb-32">
 					<div class="container space-y-8">
 						<h1 class="title-5">{{- post.title -}}</h1>

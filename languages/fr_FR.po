@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Mono\n"
-"POT-Creation-Date: 2024-09-18 10:54+0200\n"
-"PO-Revision-Date: 2024-09-18 11:03+0200\n"
+"POT-Creation-Date: 2024-09-19 09:26+0200\n"
+"PO-Revision-Date: 2024-09-19 09:26+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -686,17 +686,17 @@ msgstr "Lien"
 msgid "Link block. (Optional)"
 msgstr "Lien du bloc. (Optionnel)"
 
-#: views/footer.html.twig:20
+#: views/footer.html.twig:19
 msgid "All rights reserved"
 msgstr "Tous droits réservés"
 
-#: views/footer.html.twig:26
+#: views/footer.html.twig:25
 #, php-format
 msgid ""
 "Website\n"
 "by %s"
 msgstr ""
-"Site Internet\n"
+"Site internet\n"
 "par %s"
 
 #: views/pages/404.html.twig:20 views/pages/about-page.html.twig:20
