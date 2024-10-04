@@ -178,7 +178,7 @@ class CaseStudyPostFields {
 		acf_add_local_field_group(
 			array(
 				'key'            => 'group_' . $key,
-				'title'          => __( 'Product Post Fields', 'mono' ),
+				'title'          => __( 'Case Study Post Fields', 'mono' ),
 				'fields'         => $fields,
 				'location'       => $location,
 				'menu_order'     => 0,

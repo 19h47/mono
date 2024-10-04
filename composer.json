@@ -1,6 +1,6 @@
 {
 	"require": {
-		"timber/timber": "^2.0",
+		"timber/timber": "^2.2",
 		"twig/html-extra": "^3.8",
 		"twig/intl-extra": "^3.8",
 		"19h47/wp-get-theme": "dev-master",

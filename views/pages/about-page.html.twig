@@ -49,35 +49,39 @@
 					</p>
 				</div>
 			</div>
-			<div class="col-span-12 prototype:col-span-4">
-				{%- if author.image -%}
-					<div class="my-7 prototype:mx-7">
-						{{- include( 'components/image.html.twig', { image: author.image, classes: [ 'aspect-[388/501.59] object-cover' ] } ) -}}
+			<div class="col-span-12 prototype:col-span-4 prototype:h-full">
+				<div class="prototype:flex prototype:flex-col prototype:h-full">
+					{%- if author.image -%}
+						<div class="my-7 prototype:mx-7 prototype:grow relative">
+							{{- include( 'components/image.html.twig', { image: author.image, classes: [ 'aspect-[388/501.59] prototype:size-full prototype:absolute prototype:inset-0 object-cover' ] } ) -}}
+						</div>
+					{%- else -%}
+						<div class="aspect-[388/501.59] bg-current my-7 prototype:mx-7"></div>
+					{%- endif -%}
+					<div>
+						<hr class="border-none bg-brand-noir w-full h-0.5">
+						<div class="nom border-b-brand-noir border-b-[0.125rem] flex items-center justify-center h-[4.125rem]">
+							<p class="text-center whitespace-nowrap">Gwenhael AOUSTIN</p>
+						</div>
+						<div class="border-b-current border-b-[0.125rem] prototype:px-7 py-4">
+							<p class="telephone">{{- __( 'Phone', 'mono' ) -}}</p>
+							<a href="tel:{{ phone_number | replace( { ' ' : '' } ) | trim }}" class="block Desk/CTA_telephone text-nowrap">
+								{{- phone_number -}}
+							</a>
+						</div>
+						<div class="border-b-current border-b-[0.125rem] prototype:px-7 py-4">
+							<p class="email">{{- __( 'Email address', 'mono' ) -}}</p>
+							<a href="mailto:{{ public_email }}" class="block Desk/CTA_email hover:underline underline-offset-[calc(4em/14)] decoration-[0.125rem]">
+								{{- public_email -}}
+							</a>
+						</div>
+						<div class="flex divide-x-[0.125rem] divide-current">
+							{%- for social in socials -%}
+								<a href="{{ social.link }}" class="Desk/CTA_social py-6 lg:py-[1.1875rem] grow text-center hover:underline underline-offset-[calc(4em/14)] decoration-[0.125rem]" rel="noopener noreferer" target="_blank">{{- social.title -}}</a>
+								{# {{- loop.last ? '' : '<hr class="w-0.5 bg-current border-none h-[3.75rem]">' -}} #}
+							{%- endfor -%}
+						</div>
 					</div>
-				{%- else -%}
-					<div class="aspect-[388/501.59] bg-current my-7 prototype:mx-7"></div>
-				{%- endif -%}
-				<hr class="border-none bg-brand-noir w-full h-0.5">
-				<div class="nom border-b-brand-noir border-b-[0.125rem] flex items-center justify-center h-[4.125rem]">
-					<p class="text-center whitespace-nowrap">Gwenhael AOUSTIN</p>
-				</div>
-				<div class="border-b-current border-b-[0.125rem] prototype:px-7 py-4">
-					<p class="telephone">{{- __( 'Phone', 'mono' ) -}}</p>
-					<a href="tel:{{ phone_number | replace( { ' ' : '' } ) | trim }}" class="block Desk/CTA_telephone text-nowrap">
-						{{- phone_number -}}
-					</a>
-				</div>
-				<div class="border-b-current border-b-[0.125rem] prototype:px-7 py-4">
-					<p class="email">{{- __( 'Email address', 'mono' ) -}}</p>
-					<a href="mailto:{{ public_email }}" class="block Desk/CTA_email hover:underline underline-offset-[calc(4em/14)] decoration-[0.125rem]">
-						{{- public_email -}}
-					</a>
-				</div>
-				<div class="flex divide-x-[0.125rem] divide-current">
-					{%- for social in socials -%}
-						<a href="{{ social.link }}" class="Desk/CTA_social py-6 lg:py-[1.1875rem] grow text-center hover:underline underline-offset-[calc(4em/14)] decoration-[0.125rem]" rel="noopener noreferer" target="_blank">{{- social.title -}}</a>
-						{# {{- loop.last ? '' : '<hr class="w-0.5 bg-current border-none h-[3.75rem]">' -}} #}
-					{%- endfor -%}
 				</div>
 			</div>
 			<div class="col-span-2 py-7 pl-7 hidden prototype:block">
