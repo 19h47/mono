@@ -81,7 +81,7 @@
 						</div>
 						<div class="flex divide-x-[0.125rem] divide-current">
 							{%- for social in socials -%}
-								<a href="{{ social.link }}" class="Desk/CTA_social py-6 lg:py-[1.1875rem] grow text-center hover:underline underline-offset-[calc(4em/14)] decoration-[0.125rem]" rel="noopener noreferer" target="_blank">{{- social.title -}}</a>
+								<a href="{{ social.url }}" class="Desk/CTA_social py-6 lg:py-[1.1875rem] grow text-center hover:underline underline-offset-[calc(4em/14)] decoration-[0.125rem]" rel="noopener noreferer" target="_blank">{{- social.title -}}</a>
 								{# {{- loop.last ? '' : '<hr class="w-0.5 bg-current border-none h-[3.75rem]">' -}} #}
 							{%- endfor -%}
 						</div>

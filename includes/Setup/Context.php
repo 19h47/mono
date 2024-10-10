@@ -82,6 +82,7 @@ class Context extends Site {
 				'name'  => __( 'Share on Tumblr', 'mono' ),
 				'link'  => 'http://www.tumblr.com/share/link?url=',
 				'color' => '#35465c',
+				'url'   => get_option( 'socials' )['tumblr'] ?? '',
 			),
 			array(
 				'title' => __( 'Pinterest', 'mono' ),
