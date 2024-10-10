@@ -15,9 +15,9 @@
 
 	<main>
 		<div class="container titre prototype:flex prototype:justify-end">
-			<div class="font-heading prototype:border-l-[0.125rem] prototype:border-current prototype:h-[3.125rem] pt-4 prototype:pt-2 prototype:pl-6 prototype:flex prototype:items-center">
-				{{- site.description -}}
-			</div>
+			<h1 class="border-b-[0.125rem] prototype:border-b-0 font-heading text-nowrap prototype:border-l-[0.125rem] border-current prototype:h-[3.125rem] prototype:pt-2 prototype:pl-6 prototype:flex prototype:items-center">
+				{{- post.meta( 'general' ).title | default( site.description ) | raw | nl2br | replace( { '<br />' : '<br class="prototype:hidden" /><hr class="border-none bg-current h-0.5 prototype:hidden" />' } )  -}}
+			</h1>
 		</div>
 
 		{% set case_studies = get_posts( { post_type: 'case_study', posts_per_page: -1 } ) %}

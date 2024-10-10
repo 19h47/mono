@@ -33,15 +33,13 @@ class Init {
 			PostTemplate\BodyClass::class,
 			Taxonomy\CaseStudyCat::class,
 			Template\PostStates::class,
-			Plugins\ACF\IncludeFields\BlocksFields::class,
 			Plugins\ACF\IncludeFields\CaseStudyPostFields::class,
+			Plugins\ACF\IncludeFields\FrontPageFields::class,
 			Plugins\ACF\IncludeFields\ThemeFields::class,
 			Plugins\ACF\Input\AdminEnqueueScripts::class,
 			Plugins\ACF\Init::class,
 			Vite::class,
-			WPEmbed::class,
 			WPImageEditor::class,
-			WPQuery::class,
 			Menu::class,
 		);
 	}

@@ -32,7 +32,7 @@
 	<main>
 		<div class="container overflow-hidden grid grid-cols-12 divide-y-[0.125rem] prototype:divide-y-0 prototype:divide-x-[0.125rem] divide-current">
 			<div class="col-span-12 prototype:col-span-6">
-				<h1 class="about-titre">
+				<h1 class="about-titre text-nowrap">
 					Agence d’architecture
 					<hr class="border-none bg-current h-0.5">
 					intérieure et commerciale
@@ -61,19 +61,23 @@
 					<div>
 						<hr class="border-none bg-brand-noir w-full h-0.5">
 						<div class="nom border-b-brand-noir border-b-[0.125rem] flex items-center justify-center h-[4.125rem]">
-							<p class="text-center whitespace-nowrap">Gwenhael AOUSTIN</p>
+							<p class="whitespace-nowrap">{{- author.name -}}</p>
 						</div>
 						<div class="border-b-current border-b-[0.125rem] prototype:px-7 py-4">
 							<p class="telephone">{{- __( 'Phone', 'mono' ) -}}</p>
-							<a href="tel:{{ phone_number | replace( { ' ' : '' } ) | trim }}" class="block Desk/CTA_telephone text-nowrap">
-								{{- phone_number -}}
-							</a>
+							<div class="flex items-center justify-center">
+								<a href="tel:{{ phone_number | replace( { ' ' : '' } ) | trim }}" class="block Desk/CTA_telephone text-nowrap">
+									{{- phone_number -}}
+								</a>
+							</div>
 						</div>
 						<div class="border-b-current border-b-[0.125rem] prototype:px-7 py-4">
 							<p class="email">{{- __( 'Email address', 'mono' ) -}}</p>
-							<a href="mailto:{{ public_email }}" class="block Desk/CTA_email hover:underline underline-offset-[calc(4em/14)] decoration-[0.125rem]">
-								{{- public_email -}}
-							</a>
+							<div class="flex items-center justify-center">
+								<a href="mailto:{{ public_email }}" class="block Desk/CTA_email hover:underline underline-offset-[calc(4em/14)] decoration-[0.125rem]">
+									{{- public_email -}}
+								</a>
+							</div>
 						</div>
 						<div class="flex divide-x-[0.125rem] divide-current">
 							{%- for social in socials -%}
