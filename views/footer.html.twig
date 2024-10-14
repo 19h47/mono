@@ -36,9 +36,9 @@
 								<a
 									href="{{ item.url }}"
 									class="{{ html_classes(
-										'underline prototype:no-underline hover:underline prototype:underline-offset-[calc(4em/14)] prototype:decoration-[0.125rem]',
+										'underline hover:underline prototype:underline-offset-[calc(4em/14)] prototype:decoration-[0.125rem]',
 										item.classes | join( ' ' ),
-										item.current or item.current_item_parent or ( 'current_page_parent' in item.classes ) ? 'underline' : '',
+										item.current or item.current_item_parent or ( 'current_page_parent' in item.classes ) ? '' : 'prototype:no-underline',
 									) }}"
 									itemprop="url"
 									{{ item.is_target_blank or item.is_external ? " target=\"#{item.target}\" rel=\"noopener noreferer\"" }}
