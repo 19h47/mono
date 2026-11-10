@@ -1,5 +1,3 @@
-@layer components {
-  .container {
-    @apply max-w-[97.5rem] mx-auto px-[0.9375rem] prototype:px-[3.125rem];
-  }
+@utility container {
+	@apply max-w-[97.5rem] mx-auto px-[0.9375rem] prototype:px-[3.125rem];
 }

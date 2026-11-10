@@ -45,10 +45,12 @@
 
 		<div class="space-y-5 pt-[4.35rem] prototype:pt-[5.275rem] pb-[9.25rem] prototype:pb-[6.75rem] after:bg-brand-noir relative after:absolute after:inset-0 after:mt-[8.6rem] prototype:after:mt-[15.525rem] after:z-1 after:pointer-events-none">
 			{% for row in case_studies | batch( 16 ) %}
+				{% set first_row = loop.first %}
 				<div class="relative z-2 case-studies container grid gap-5 grid-cols-1 lg:grid-cols-2 prototype:grid-cols-3" style="grid-auto-rows: minmax(0, 17.75rem);">
 					{% for case_study in row %}
 						<div class="lg:col-span-1" data-index="{{ loop.index }}">
-							{{- include( 'components/tease-case-study.html.twig', { post: case_study } ) -}}
+							{%- set first = first_row and loop.first -%}
+							{{- include( 'components/tease-case-study.html.twig', { post: case_study, loading: first ? 'eager' : 'lazy', fetchpriority: first ? 'high' : null } ) -}}
 						</div>
 					{% endfor %}
 				</div>

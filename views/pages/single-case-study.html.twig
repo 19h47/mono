@@ -130,6 +130,7 @@
 
 					<div class="space-y-5">
 						{% for row in post.meta( 'gallery' ) | batch( 5 ) %}
+							{% set first_row = loop.first %}
 							<div class="gallery grid gap-5 grid-cols-1 prototype:grid-cols-2">
 								{%- for image in row -%}
 									{{-
@@ -145,6 +146,8 @@
 													loop.index == 5 ? 'prototype:h-[40.646875rem]',
 												],
 												image: image,
+												loading: first_row and loop.first ? 'eager' : 'lazy',
+												attributes: first_row and loop.first ? { fetchpriority: 'high' } : {},
 											}
 										)
 									-}}

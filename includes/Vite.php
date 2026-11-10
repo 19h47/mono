@@ -50,7 +50,7 @@ class Vite {
 	 * @return string|null
 	 * @throws Exception
 	 */
-	public static function run( string $build_path = null, bool $output = true ): string|null {
+	public static function run( string|null $build_path = null, bool $output = true ): string|null {
 		if ( is_admin() || wp_doing_ajax() || wp_is_json_request() ) {
 			return null;
 		}
@@ -96,7 +96,7 @@ class Vite {
 	 * @return void
 	 * @throws Exception
 	 */
-	public static function enqueue_script_module( string $build_path = null ): void {
+	public static function enqueue_script_module( string|null $build_path = null ): void {
 		// we only want to continue if we have a client.
 		if ( ! $client = self::run( $build_path, false ) ) {
 			return;
