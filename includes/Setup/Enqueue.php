@@ -25,8 +25,55 @@ class Enqueue {
 		add_action( 'wp_enqueue_scripts', array( $this, 'dequeue_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
-		add_action( 'wp_head', array( $this, 'preload_wp_scripts' ) );
 		add_action( 'wp_head', array( $this, 'preload_wp_styles' ) );
+		add_filter( 'wp_resource_hints', array( $this, 'resource_hints' ), 10, 2 );
+		add_filter( 'wp_speculation_rules_configuration', array( $this, 'speculation_rules_configuration' ) );
+	}
+
+
+	/**
+	 * Connect ahead to the Adobe Fonts origins the browser discovers late: the
+	 * kit stylesheet imports another one from p.typekit.net, then loads the
+	 * fonts from use.typekit.net over a CORS connection, not the one the
+	 * stylesheet came through.
+	 *
+	 * @param array  $urls          URLs to print for resource hints.
+	 * @param string $relation_type Relation type the URLs are printed for.
+	 * @return array
+	 */
+	public function resource_hints( array $urls, string $relation_type ): array {
+		if ( 'preconnect' !== $relation_type ) {
+			return $urls;
+		}
+
+		$urls[] = 'https://p.typekit.net';
+		$urls[] = array(
+			'href'        => 'https://use.typekit.net',
+			'crossorigin' => 'anonymous',
+		);
+
+		return $urls;
+	}
+
+
+	/**
+	 * Prefetch a linked page after a short hover (`moderate`) rather than on
+	 * click. Prefetch only: prerendering would run the page's scripts before
+	 * it is shown. `null` (logged-in visitors, plain permalinks) keeps
+	 * speculative loading off.
+	 *
+	 * @param array|null $config Speculation rules configuration.
+	 * @return array|null
+	 */
+	public function speculation_rules_configuration( ?array $config ): ?array {
+		if ( null === $config ) {
+			return null;
+		}
+
+		return array(
+			'mode'      => 'prefetch',
+			'eagerness' => 'moderate',
+		);
 	}
 
 
@@ -55,7 +102,7 @@ class Enqueue {
 
 		// enqueue theme-style-css into our head
 		wp_enqueue_style( get_theme_text_domain() . '-main', $filename, $deps, null );
-		wp_enqueue_style( 'typekit', '//use.typekit.net/xkp3qjz.css' );
+		wp_enqueue_style( 'typekit', 'https://use.typekit.net/xkp3qjz.css', array(), null );
 	}
 
 
@@ -137,32 +184,6 @@ class Enqueue {
 
 		wp_enqueue_script( get_theme_text_domain() . '-feature' );
 		wp_enqueue_script_module( get_theme_text_domain() . '-main' );
-	}
-
-
-	/**
-	 * Preload scripts
-	 *
-	 * Preload scripts for faster loading.
-	 *
-	 * @access public
-	 * @return void
-	 */
-	public function preload_wp_scripts(): void {
-		global $wp_scripts;
-
-		foreach ( $wp_scripts->queue as $handle ) {
-			$script = $wp_scripts->registered[ $handle ];
-
-			if ( substr( $script->handle, 0, strlen( get_theme_text_domain() ) ) !== get_theme_text_domain() ) {
-				continue;
-			}
-
-			if ( isset( $script->extra['group'] ) && 1 === $script->extra['group'] ) {
-				$href = $script->src . ( $script->ver ? "?ver={$script->ver}" : '' );
-				echo '<link rel="preload" as="script" href="' . esc_attr( $href ) . '">';
-			}
-		}
 	}
 
 

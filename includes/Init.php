@@ -39,7 +39,6 @@ class Init {
 			Plugins\ACF\Input\AdminEnqueueScripts::class,
 			Plugins\ACF\Init::class,
 			Vite::class,
-			WPImageEditor::class,
 			Menu::class,
 		);
 	}

@@ -14,18 +14,29 @@
 {%- if image -%}
 	{% set image = get_image( image ) %}
 	{% set size = 'image/gif' == image.post_mime_type ? 'full' : size | default( 'full' ) %}
+	{% set srcset = image.srcset ? image.srcset( size ) : image.src( size ) %}
 
 	<picture{{ size ? " data-size=\"#{ size }\"" : '' }} data-mime-type="{{ image.post_mime_type }}">
 
 		{% if 'image/svg+xml' != image.post_mime_type and 'image/gif' != image.post_mime_type %}
+			{#- towebp converts a single URL: convert each candidate of the srcset. -#}
 			<source
 				type="image/webp"
-				srcset="{{ image.src( size ) | towebp }}"
+				srcset="{{
+					srcset
+						| split( ', ' )
+						| map( candidate => candidate
+							| split( ' ' )
+							| map( ( part, i ) => i == 0 ? part | towebp( 82 ) : part )
+							| join( ' ' )
+						)
+						| join( ', ' )
+				}}"
 				{{ sizes ? "sizes=\"#{sizes}\"" : ( image.img_sizes ?  "sizes=\"#{ image.img_sizes( size ) }\"" : 'sizes=\"auto\"' ) }}
 			>
 			<source
 				type="{{ image.post_mime_type }}"
-				srcset="{{ image.srcset ? image.srcset( size ) : image.src( size ) }}"
+				srcset="{{ srcset }}"
 				{{ sizes ? "sizes=\"#{sizes}\"" : ( image.img_sizes ?  "sizes=\"#{ image.img_sizes( size ) }\"" : 'sizes=\"auto\"' ) }}
 			>
 		{% endif %}

@@ -1,5 +1,9 @@
 {#
  # Components: Tease Case Study
+ #
+ # @param {object} post Case study.
+ # @param {string} [loading] Loading attribute of the image. Defaults to 'lazy'.
+ # @param {string} [fetchpriority] Fetch priority of the image ('high' for the LCP).
  #}
 {% set cats = post.terms( { taxonomy: 'case_study_cat' } ) %}
 
@@ -10,6 +14,8 @@
 			'components/image.html.twig',
 			{
 				image: post.thumbnail,
+				loading: loading | default( 'lazy' ),
+				attributes: fetchpriority | default( false ) ? { fetchpriority: fetchpriority } : {},
 				classes: [
 					'relative z-1 size-full object-cover object-center',
 					'transition-transform duration-700 ease-in-out',

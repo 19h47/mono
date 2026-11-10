@@ -53,7 +53,7 @@
 				<div class="prototype:flex prototype:flex-col prototype:h-full">
 					{%- if author.image -%}
 						<div class="my-7 prototype:mx-7 prototype:grow relative">
-							{{- include( 'components/image.html.twig', { image: author.image, classes: [ 'aspect-[388/501.59] prototype:size-full prototype:absolute prototype:inset-0 object-cover' ] } ) -}}
+							{{- include( 'components/image.html.twig', { image: author.image, loading: 'eager', attributes: { fetchpriority: 'high' }, classes: [ 'aspect-[388/501.59] prototype:size-full prototype:absolute prototype:inset-0 object-cover' ] } ) -}}
 						</div>
 					{%- else -%}
 						<div class="aspect-[388/501.59] bg-current my-7 prototype:mx-7"></div>
