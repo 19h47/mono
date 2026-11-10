@@ -5,8 +5,6 @@
  * @author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
  */
 
- @tailwind base;
-
 @layer base {
 	*,
 	::after,
@@ -15,12 +13,26 @@
 		--prototype-width-unitless: 1440;
 	}
 
-	@screen prototype {
-		html {
+	html {
+		@variant prototype {
 			font-size: calc(
 				var(--base-font-size-unitless) * 100vw / var(--prototype-width-unitless)
 			);
 		}
+	}
+
+	/* Tailwind 3 defaults that Tailwind 4 changed: gray borders and pointer buttons. */
+	*,
+	::after,
+	::before,
+	::backdrop,
+	::file-selector-button {
+		border-color: var(--color-gray-200, currentcolor);
+	}
+
+	button:not(:disabled),
+	[role="button"]:not(:disabled) {
+		cursor: pointer;
 	}
 
 	body {

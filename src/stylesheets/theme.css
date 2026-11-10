@@ -1,0 +1,22 @@
+@theme {
+	--breakpoint-prototype: 90rem;
+
+	--font-heading: stadio-now-variable, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--font-body: obviously-variable, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+	--color-brand-noir: #181818;
+	--color-brand-vert: #01a767;
+
+	--animate-floating: floating 10s ease-in-out infinite;
+
+	@keyframes floating {
+		0%,
+		100% {
+			transform: rotate(0);
+		}
+
+		50% {
+			transform: translatey(-1.25rem);
+		}
+	}
+}
